@@ -53,4 +53,5 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.net)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.activity.ktx)
 }
