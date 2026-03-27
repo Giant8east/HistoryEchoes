@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.historyechoesview.databinding.ActivityMainBinding
+import com.example.historyechoesview.view.activity.HistoryEchoesDetailActivity
 import com.example.historyechoesview.view.adapter.HistoryEchoesAdapter
 import com.example.historyechoesview.viewmodel.MainViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val currentDate = simpleDateFormat.format(Date())
         binding.tvDate.text = currentDate
         adapter.setOnItemHistoryEchoesClickListener { view, model ->
-            Toast.makeText(this, model.title, Toast.LENGTH_SHORT).show()
+            HistoryEchoesDetailActivity.start(this, model.id)
         }
         binding.rvHistoryEchoes.adapter = adapter
         mainViewModel.getHistoryEchoesList(binding.tvDate.text.toString())
